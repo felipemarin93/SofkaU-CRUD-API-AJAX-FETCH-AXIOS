@@ -17,7 +17,7 @@ Funcionalidades o extras del proyecto referente al código base:
 4. Se agregan estilos de CSS con bootswatch para mostrar una interfaz mas agradable para el usuario.
 
 
-Video Youtube
+Video Youtube: https://www.youtube.com/watch?v=0Z-8gUh8NtM
 
 
 Front Ajax
@@ -33,7 +33,7 @@ Front Axios
 
 
 
-@author Daniel Fleipe Marín Giraldo
+@author Daniel Felipe Marín Giraldo
 
 
 
