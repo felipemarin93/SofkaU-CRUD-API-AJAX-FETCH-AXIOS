@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.min.css">
   <title>CRUD API REST AXIOS</title>
 </head>
 
@@ -25,7 +25,7 @@
         <input type="email" name="correo" placeholder="correo" required>
         <br>
         <br>
-        <input type="submit" value="Enviar" class="btn btn-warning">
+        <input type="submit" value="GUARDAR" class="btn btn-success">
         
         <input type="hidden" name="id">
       </form>
@@ -37,9 +37,9 @@
       <table class="crud-table">
         <thead>
           <tr>
-            <th style="width:40%">Nombre</th>
-            <th style="width:40%">Correo</th>
-            <th style="width:40%">Acciones</th>
+            <th style="width:40%">NOMBRE</th>
+            <th style="width:40%">CORREO</th>
+            <th style="width:40%">ACCIONES</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -51,8 +51,8 @@
       <td class="name"></td>
       <td class="correo"></td>
       <td>
-        <button class="edit btn btn-info">Editar</button>
-        <button class="delete btn btn-danger">Eliminar</button>
+        <button class="edit btn btn-info">EDITAR</button>
+        <button class="delete btn btn-danger">ELIMINAR</button>
       </td>
     </tr>
   </template>
@@ -148,7 +148,7 @@
 
     d.addEventListener("click", async e => {
       if (e.target.matches(".edit")) {
-        $title.textContent = "Editar Santo";
+        $title.textContent = "Editar Sofkiano";
         $form.nombre.value = e.target.dataset.name;
         $form.correo.value = e.target.dataset.correo;
         $form.id.value = e.target.dataset.id;

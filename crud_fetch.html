@@ -4,47 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
   <title>CRUD API REST FETCH</title>
 </head>
 
 <body>
-  <h1>CRUD API REST FETCH</h1>
-  <section class="crud">
-    <article>
-      <h2 class="crud-title">Agregar Sofkiano</h2>
-      <form class="crud-form">
-        <input type="text" name="nombre" placeholder="nombre" required>
+  <div class="container">
+
+  
+    <h1>CRUD API REST FETCH</h1>
+    
+    <section class="crud">
+      <article>
+        <h2 class="crud-title">Agregar Sofkiano</h2>
         <br>
-        <input type="text" name="constelacion" placeholder="constelación" required>
+        <form class="crud-form">
+          <input type="text" name="nombre" placeholder="nombre" required>
+          <br>
+          <br>
+          <input type="email" name="correo" placeholder="correo" required>
+          <br>
+          <br>
+          <input type="submit" value="Enviar" class="btn btn btn-info">
+          
+          <input type="hidden" name="id">
+        </form>
+      </article>
+      <br>
+      <article>
+        <h2>Trainning Leagues C3</h2>
         <br>
-        <input type="submit" value="Enviar">
-        <input type="hidden" name="id">
-      </form>
-    </article>
-    <article>
-      <h2>Ver sofkianos</h2>
-      <table class="crud-table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </article>
-  </section>
-  <template id="crud-template">
-    <tr>
-      <td class="name"></td>
-      <td class="constellation"></td>
-      <td>
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </td>
-    </tr>
-  </template>
+        <table class="crud-table">
+          <thead>
+            <tr>
+              <th style="width:40%">NOMBRE</th>
+              <th style="width:40%">CORREO</th>
+              <th style="width:40%">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </article>
+    </section>
+    <template id="crud-template">
+      <tr>
+        <td class="name"></td>
+        <td class="correo"></td>
+        <td>
+          <button class="edit btn btn-primary">EDITAR</button>
+          <button class="delete btn btn-warning">ELIMINAR</button>
+        </td>
+      </tr>
+    </template>
+  </div>
   <script>
     /* **********     Curso JavaScript: 117. APIs REST: CRUD con Fetch (1/2) - #jonmircha     ********** */
     /* **********     Curso JavaScript: 118. APIs REST: CRUD con Fetch (2/2) - #jonmircha     ********** */
@@ -65,10 +77,10 @@
         console.log(json);
         json.forEach(el => {
           $template.querySelector(".name").textContent = el.nombre;
-          $template.querySelector(".constellation").textContent = el.constelacion;
+          $template.querySelector(".correo").textContent = el.correo;
           $template.querySelector(".edit").dataset.id = el.id;
           $template.querySelector(".edit").dataset.name = el.nombre;
-          $template.querySelector(".edit").dataset.constellation = el.constelacion;
+          $template.querySelector(".edit").dataset.correo = el.correo;
           $template.querySelector(".delete").dataset.id = el.id;
 
           let $clone = d.importNode($template, true);
@@ -98,7 +110,7 @@
               },
               body: JSON.stringify({
                 nombre: e.target.nombre.value,
-                constelacion: e.target.constelacion.value
+                correo: e.target.correo.value
               })
             },
               res = await fetch("http://localhost:3000/sofkianos", options),
@@ -121,7 +133,7 @@
               },
               body: JSON.stringify({
                 nombre: e.target.nombre.value,
-                constelacion: e.target.constelacion.value
+                correo: e.target.correo.value
               })
             },
               res = await fetch(`http://localhost:3000/sofkianos/${e.target.id.value}`, options),
@@ -140,9 +152,9 @@
 
     d.addEventListener("click", async e => {
       if (e.target.matches(".edit")) {
-        $title.textContent = "Editar Santo";
+        $title.textContent = "Editar Sofkiano";
         $form.nombre.value = e.target.dataset.name;
-        $form.constelacion.value = e.target.dataset.constellation;
+        $form.correo.value = e.target.dataset.correo;
         $form.id.value = e.target.dataset.id;
       }
 

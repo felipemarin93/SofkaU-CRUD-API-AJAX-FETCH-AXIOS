@@ -4,47 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://bootswatch.com/5/superhero/bootstrap.min.css">
   <title>CRUD API REST AJAX</title>
 </head>
 
 <body>
+  <div class="container">
+
+  
   <h1>CRUD API REST AJAX</h1>
+  
   <section class="crud">
     <article>
-      <h2 class="crud-title">Agregar Santo</h2>
+      <h2 class="crud-title">Agregar Sofkiano</h2>
+      <br>
       <form class="crud-form">
         <input type="text" name="nombre" placeholder="nombre" required>
         <br>
-        <input type="text" name="constelacion" placeholder="constelación" required>
         <br>
-        <input type="submit" value="Enviar">
+        <input type="email" name="correo" placeholder="correo" required>
+        <br>
+        <br>
+        <input type="submit" value="GUARDAR" class="btn btn-outline-success btn-sm">
+        
         <input type="hidden" name="id">
       </form>
     </article>
+    <br>
     <article>
-      <h2>Ver Santos</h2>
+      <h2>Trainning Leagues C3</h2>
+      <br>
       <table class="crud-table">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Constelación</th>
-            <th>Acciones</th>
+            <th style="width:40%">NOMBRE</th>
+            <th style="width:40%">CORREO</th>
+            <th style="width:40%">ACCIONES</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
-    </article>
+    </article>  
   </section>
   <template id="crud-template">
     <tr>
       <td class="name"></td>
-      <td class="constellation"></td>
+      <td class="correo"></td>
       <td>
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
+        <button class="edit btn btn-outline-warning">EDITAR</button>
+        <button class="delete btn btn-outline-danger">ELIMINAR</button>
       </td>
     </tr>
   </template>
+</div>
   <script>
     /* **********     Curso JavaScript: 115. APIs REST: CRUD con AJAX (1/2) - #jonmircha     ********** */
     /* **********     Curso JavaScript: 116. APIs REST: CRUD con AJAX (2/2) - #jonmircha     ********** */
@@ -78,16 +90,16 @@
 
     const getAll = () => {
       ajax({
-        url: "http://localhost:3000/santos",
+        url: "http://localhost:3000/sofkianos",
         success: (res) => {
           console.log(res);
 
           res.forEach(el => {
             $template.querySelector(".name").textContent = el.nombre;
-            $template.querySelector(".constellation").textContent = el.constelacion;
+            $template.querySelector(".correo").textContent = el.correo;
             $template.querySelector(".edit").dataset.id = el.id;
             $template.querySelector(".edit").dataset.name = el.nombre;
-            $template.querySelector(".edit").dataset.constellation = el.constelacion;
+            $template.querySelector(".edit").dataset.correo = el.correo;
             $template.querySelector(".delete").dataset.id = el.id;
 
             let $clone = d.importNode($template, true);
@@ -112,25 +124,25 @@
         if (!e.target.id.value) {
           //Create - POST
           ajax({
-            url: "http://localhost:3000/santos",
+            url: "http://localhost:3000/sofkianos",
             method: "POST",
             success: (res) => location.reload(),
             error: (err) => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
             data: {
               nombre: e.target.nombre.value,
-              constelacion: e.target.constelacion.value
+              correo: e.target.correo.value
             }
           });
         } else {
           //Update - PUT
           ajax({
-            url: `http://localhost:3000/santos/${e.target.id.value}`,
+            url: `http://localhost:3000/sofkianos/${e.target.id.value}`,
             method: "PUT",
             success: (res) => location.reload(),
             error: (err) => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
             data: {
               nombre: e.target.nombre.value,
-              constelacion: e.target.constelacion.value
+              correo: e.target.correo.value
             }
           });
         }
@@ -139,9 +151,9 @@
 
     d.addEventListener("click", e => {
       if (e.target.matches(".edit")) {
-        $title.textContent = "Editar Santo";
+        $title.textContent = "Editar Sofkiano";
         $form.nombre.value = e.target.dataset.name;
-        $form.constelacion.value = e.target.dataset.constellation;
+        $form.correo.value = e.target.dataset.correo;
         $form.id.value = e.target.dataset.id;
       }
 
@@ -151,7 +163,7 @@
         if (isDelete) {
           //Delete - DELETE
           ajax({
-            url: `http://localhost:3000/santos/${e.target.dataset.id}`,
+            url: `http://localhost:3000/sofkianos/${e.target.dataset.id}`,
             method: "DELETE",
             success: (res) => location.reload(),
             error: (err) => alert(err)

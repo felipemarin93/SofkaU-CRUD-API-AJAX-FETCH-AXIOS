@@ -1,9 +1,9 @@
 {
   "sofkianos": [
     {
-      "id": 1,
       "nombre": "Alvaro Enrique Vega Moreno",
-      "correo": "xvega19@gmail.com"
+      "correo": "xvega19@gmail.com",
+      "id": 1
     },
     {
       "id": 2,
