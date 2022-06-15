@@ -20,6 +20,19 @@ Funcionalidades o extras del proyecto referente al código base:
 Video Youtube
 
 
+Front Ajax
+![image](https://user-images.githubusercontent.com/51167724/173883835-cb0546be-d913-4e49-a32c-484622c96239.png)
+
+Front
+Fetch
+![image](https://user-images.githubusercontent.com/51167724/173884062-9c1bdfc0-5643-4df9-b990-504f1521b761.png)
+
+
+Front Axios
+![image](https://user-images.githubusercontent.com/51167724/173883720-52dd1332-927f-449f-8be1-a284705cb584.png)
+
+
+
 @author Daniel Fleipe Marín Giraldo
 
 
