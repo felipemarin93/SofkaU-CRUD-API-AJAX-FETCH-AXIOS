@@ -21,9 +21,9 @@
       "correo": "tattortega.28@gmail.com"
     },
     {
-      "id": 5,
-      "nombre": "Daniel Felipe Marín Giraldo",
-      "correo": "felipemaringiraldo@hotmail.com"
+      "nombre": "Daniel Felipe Marín",
+      "correo": "felipemaringiraldo@hotmail.com",
+      "id": 5
     },
     {
       "nombre": "Óscar Gabriel Farfán Rodríguez",
@@ -59,6 +59,11 @@
       "nombre": "Mateo Gutierrez Medina",
       "correo": "mateog147@hotmail.com",
       "id": 12
+    },
+    {
+      "nombre": "prueba1",
+      "correo": "prueba1@gmail.com",
+      "id": 13
     }
   ],
   "coaches": [
