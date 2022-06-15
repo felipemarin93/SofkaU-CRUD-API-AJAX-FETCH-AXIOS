@@ -4,31 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
   <title>CRUD API REST AXIOS</title>
 </head>
 
 <body>
+  <div class="container">
+
+  
   <h1>CRUD API REST AXIOS</h1>
+  
   <section class="crud">
     <article>
-      <h2 class="crud-title">Agregar Santo</h2>
+      <h2 class="crud-title">Agregar Sofkiano</h2>
+      <br>
       <form class="crud-form">
         <input type="text" name="nombre" placeholder="nombre" required>
         <br>
-        <input type="text" name="constelacion" placeholder="constelación" required>
         <br>
-        <input type="submit" value="Enviar">
+        <input type="email" name="correo" placeholder="correo" required>
+        <br>
+        <br>
+        <input type="submit" value="Enviar" class="btn btn-warning">
+        
         <input type="hidden" name="id">
       </form>
     </article>
+    <br>
     <article>
-      <h2>Ver Santos</h2>
+      <h2>Trainning Leagues C3</h2>
+      <br>
       <table class="crud-table">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Constelación</th>
-            <th>Acciones</th>
+            <th style="width:40%">Nombre</th>
+            <th style="width:40%">Correo</th>
+            <th style="width:40%">Acciones</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -38,13 +49,14 @@
   <template id="crud-template">
     <tr>
       <td class="name"></td>
-      <td class="constellation"></td>
+      <td class="correo"></td>
       <td>
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
+        <button class="edit btn btn-info">Editar</button>
+        <button class="delete btn btn-danger">Eliminar</button>
       </td>
     </tr>
   </template>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     /* **********     Curso JavaScript: 119. APIs REST: CRUD con Axios (1/2) - #jonmircha     ********** */
@@ -58,17 +70,17 @@
 
     const getAll = async () => {
       try {
-        let res = await axios.get("http://localhost:5555/santos"),
+        let res = await axios.get("http://localhost:3000/sofkianos"),
           json = await res.data;
 
         console.log(json);
 
         json.forEach(el => {
           $template.querySelector(".name").textContent = el.nombre;
-          $template.querySelector(".constellation").textContent = el.constelacion;
+          $template.querySelector(".correo").textContent = el.correo;
           $template.querySelector(".edit").dataset.id = el.id;
           $template.querySelector(".edit").dataset.name = el.nombre;
-          $template.querySelector(".edit").dataset.constellation = el.constelacion;
+          $template.querySelector(".edit").dataset.correo = el.correo;
           $template.querySelector(".delete").dataset.id = el.id;
 
           let $clone = d.importNode($template, true);
@@ -98,10 +110,10 @@
               },
               data: JSON.stringify({
                 nombre: e.target.nombre.value,
-                constelacion: e.target.constelacion.value
+                correo: e.target.correo.value
               })
             },
-              res = await axios("http://localhost:5555/santos", options),
+              res = await axios("http://localhost:3000/sofkianos", options),
               json = await res.data;
 
             location.reload();
@@ -119,10 +131,10 @@
               },
               data: JSON.stringify({
                 nombre: e.target.nombre.value,
-                constelacion: e.target.constelacion.value
+                correo: e.target.correo.value
               })
             },
-              res = await axios(`http://localhost:5555/santos/${e.target.id.value}`, options),
+              res = await axios(`http://localhost:3000/sofkianos/${e.target.id.value}`, options),
               json = await res.data;
 
             location.reload();
@@ -138,12 +150,12 @@
       if (e.target.matches(".edit")) {
         $title.textContent = "Editar Santo";
         $form.nombre.value = e.target.dataset.name;
-        $form.constelacion.value = e.target.dataset.constellation;
+        $form.correo.value = e.target.dataset.correo;
         $form.id.value = e.target.dataset.id;
       }
 
       if (e.target.matches(".delete")) {
-        let isDelete = confirm(`¿Estás seguro de eliminar el id ${e.target.dataset.id}?`);
+        let isDelete = confirm(`¿Estás seguro de eliminar el registro con Id:  ${e.target.dataset.id}?`);
 
         if (isDelete) {
           //Delete - DELETE
@@ -154,7 +166,7 @@
                 "Content-type": "application/json; charset=utf-8"
               }
             },
-              res = await axios(`http://localhost:5555/santos/${e.target.dataset.id}`, options),
+              res = await axios(`http://localhost:3000/sofkianos/${e.target.dataset.id}`, options),
               json = await res.data;
 
             location.reload();

@@ -1,91 +1,86 @@
 {
-  "santos": [
+  "sofkianos": [
     {
       "id": 1,
-      "nombre": "Seiya",
-      "constelacion": "Pegaso"
+      "nombre": "Alvaro Enrique Vega Moreno",
+      "correo": "xvega19@gmail.com"
     },
     {
       "id": 2,
-      "nombre": "Shiryu",
-      "constelacion": "Dragón"
+      "nombre": "Juan Ignacio Ramallo",
+      "correo": "ignaramallo3@gmail.com"
     },
     {
       "id": 3,
-      "nombre": "Hyoga",
-      "constelacion": "Cisne"
+      "nombre": "Daniel Alejandro Salinas Pinedo",
+      "correo": "SFDaniefranco@gmail.com"
     },
     {
       "id": 4,
-      "nombre": "Shun",
-      "constelacion": "Andrómeda"
+      "nombre": "Luis Ricardo Ortega Mantilla",
+      "correo": "tattortega.28@gmail.com"
     },
     {
       "id": 5,
-      "nombre": "Ikki",
-      "constelacion": "Fénix"
+      "nombre": "Daniel Felipe Marín Giraldo",
+      "correo": "felipemaringiraldo@hotmail.com"
     },
     {
-      "nombre": "Mü",
-      "constelacion": "Aries",
+      "nombre": "Óscar Gabriel Farfán Rodríguez",
+      "correo": "oscarfarfan92@gmail.com",
       "id": 6
     },
     {
-      "nombre": "Aldebaran",
-      "constelacion": "Tauro",
+      "nombre": "John Esteban Alvarez Piedrahita",
+      "correo": "esteban.ea145@gmail.com",
       "id": 7
     },
     {
-      "nombre": "Saga",
-      "constelacion": "Geminis",
+      "nombre": "Luis Manuel Monroy Garcia",
+      "correo": "luismonroy1014@gmail.com",
       "id": 8
     },
     {
-      "nombre": "Máscara de Muerte",
-      "constelacion": "Cancer",
+      "nombre": "Stivent Alfonso Florez Peña",
+      "correo": "steventflorez94@gmail.com",
       "id": 9
     },
     {
-      "nombre": "Aioria",
-      "constelacion": "Leo",
+      "nombre": "Piter Alejandro Velasquez Cota",
+      "correo": "pealveco@gmail.com",
       "id": 10
     },
     {
-      "nombre": "Shaka",
-      "constelacion": "Virgo",
+      "nombre": "Yeferson Alejandro Valencia",
+      "correo": "alejandro.yandd@gmail.com",
       "id": 11
     },
     {
-      "nombre": "Dohko",
-      "constelacion": "Libra",
+      "nombre": "Mateo Gutierrez Medina",
+      "correo": "mateog147@hotmail.com",
       "id": 12
-    },
-    {
-      "nombre": "Felipe",
-      "constelacion": "prueba",
-      "id": 13
     }
   ],
-  "dioses": [
+  "coaches": [
     {
       "id": 1,
-      "nombre": "Athena",
-      "de": "Tierra"
+      "nombre": "Julian Lasso",
+      "de": "Coach Tecnico"
     },
     {
       "id": 2,
-      "nombre": "Poseidón",
-      "de": "Mar"
+      "nombre": "Edgar Morillo",
+      "de": "Coach Lider"
     },
     {
       "id": 3,
-      "nombre": "Hades",
-      "de": "Inframundo"
+      "nombre": "Raul Alzate",
+      "de": "Coach Técnico"
     },
     {
       "id": 4,
-      "nombre": "Zeus",
-      "de": "Cielo"
+      "nombre": "Manuel Salas",
+      "de": "Director Sofka U"
     }
   ]
 }
